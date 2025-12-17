@@ -1,0 +1,344 @@
+/* =======================================================
+   FINALIZED TEAL GRADIENT ELEGANCE STYLES (style.css)
+   ======================================================= */
+:root {
+    /* Teal and White Elegant Color Palette */
+    --color-background-start: #172a3a;       /* Deep Teal (Gradient Start) */
+    --color-background-end: #0a141c;         /* Very Dark Teal/Black (Gradient End) */
+    --color-card-background: rgba(33, 61, 80, 0.9); /* Semi-transparent Teal for Cards */
+    --color-primary: #f5f5f5;                /* Soft White Text */
+    --color-accent-teal: #4db6ac;            /* Primary Teal Accent (Bright) */
+    --color-accent-highlight: #b2dfdb;       /* Light Teal Highlight */
+    --color-text-light: #a9b9c9;             /* Light Grey/Blue Text */
+    --color-border: #3c5471;                 /* Border/Divider Color */
+}
+
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--color-primary);
+    /* IMPLEMENTING THE GRADIENT BACKGROUND */
+    background: linear-gradient(to bottom, var(--color-background-start), var(--color-background-end));
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+}
+
+h3 {
+    font-size: 2em;
+    color: var(--color-accent-teal);
+    border-bottom: 2px solid var(--color-accent-teal);
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+/* Header/Hero Section */
+.hero {
+    background-color: transparent;
+    padding: 60px 0;
+    border-bottom: 5px solid var(--color-accent-teal);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.header-details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contact Group Alignment and Bars */
+.contact-group {
+    margin-top: 15px;
+}
+
+.contact-group p {
+    display: inline-block;
+    font-size: 0.9em;
+    margin-right: 15px;
+    color: var(--color-accent-highlight);
+}
+
+/* Separator Style */
+.contact-group p:not(:last-child)::after {
+    content: "|";
+    color: var(--color-accent-teal);
+    margin-left: 15px;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    border: 4px solid var(--color-accent-teal);
+    overflow: hidden; /* CRITICAL: Clips the image outside the circle */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FIX: Ensure image fills the circle without distortion */
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* CRITICAL: Scales and crops the image to cover the entire container */
+}
+
+.header-text h1 {
+    font-size: 2.2em;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.header-text h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--color-accent-highlight);
+    margin-bottom: 0;
+}
+
+/* Section Styling */
+.section {
+    padding: 50px 0;
+    background-color: transparent;
+}
+
+/* Card Styling */
+.job-card {
+    background: var(--color-card-background);
+    padding: 25px;
+    border-radius: 4px;
+    border-left: 5px solid var(--color-accent-teal);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.job-card:hover {
+    background-color: #2e4761;
+}
+
+.job-card h4 {
+    font-size: 1.3em;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+/* Style for Company Names (Unbolded) */
+.job-card .company {
+    font-weight: normal; 
+    display: inline;
+}
+
+/* Project Styling */
+.project-card .school {
+    display: block;
+    font-weight: 400;
+    color: var(--color-text-light);
+    font-size: 0.9em;
+    margin-top: 0;
+}
+
+.dates {
+    font-style: italic;
+    color: var(--color-text-light);
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.work-summary {
+    font-size: 0.95em;
+    color: var(--color-text-light);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Project Section - Parallel Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--color-card-background);
+    padding: 25px;
+    border-radius: 4px;
+    border-top: 5px solid var(--color-accent-teal);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background-color: #2e4761;
+}
+
+.project-photo {
+    width: 100%;
+    height: 180px;
+    background-color: var(--color-border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-size: 0.8em;
+    text-align: center;
+    border: 2px solid var(--color-accent-teal);
+    margin-top: auto;
+}
+
+/* Extracurriculars List */
+.extracurricular-card {
+    background: var(--color-card-background);
+    padding: 25px;
+    border-radius: 4px;
+    border-left: 5px solid var(--color-accent-highlight);
+    margin-bottom: 30px;
+}
+
+.extracurricular-card h4 {
+    color: var(--color-primary); 
+    font-weight: normal;
+}
+
+.extracurricular-card ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+.extracurricular-card li {
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+}
+
+/* TECHNICAL SKILLS REVERTED DESIGN */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+#skills .job-card { 
+    background: transparent;
+    border: none;
+    border-left: 3px solid var(--color-accent-teal);
+    box-shadow: none;
+    padding: 0 0 0 15px;
+    margin-bottom: 0;
+}
+#skills .job-card:hover {
+    background: transparent;
+}
+
+#skills h4 {
+    color: var(--color-accent-teal);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+#skills ul {
+    list-style: disc inside;
+    padding-left: 10px;
+}
+
+#skills li {
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+}
+
+
+/* Let's Connect Page */
+#connect {
+    text-align: center;
+    padding: 80px 0;
+    background-color: var(--color-card-background);
+}
+
+#connect h3 {
+    border-bottom: none;
+    color: var(--color-primary);
+    margin-bottom: 40px;
+}
+
+.connect-links a {
+    color: var(--color-accent-teal);
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 0 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--color-accent-teal);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.connect-links a:hover {
+    background-color: var(--color-accent-teal);
+    color: var(--color-background-start);
+}
+
+
+/* Footer */
+footer {
+    background-color: #0a141c;
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-group p {
+        display: block;
+        margin: 5px 0;
+    }
+    .contact-group p:not(:last-child)::after {
+        content: none;
+    }
+}
