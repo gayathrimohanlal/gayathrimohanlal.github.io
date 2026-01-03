@@ -320,3 +320,46 @@ footer {
     
     margin: 0 !important; /* Removes extra gaps inside the box */
 }
+/* =======================================================
+   EXTRA-CURRICULAR ACTIVITIES STYLES
+   ======================================================= */
+
+/* Ensure the card layout matches your existing job-cards */
+.extracurricular-card {
+    background: var(--color-card-background);
+    padding: 25px;
+    border-radius: 4px;
+    border-left: 5px solid var(--color-accent-teal);
+    margin-bottom: 30px;
+}
+
+/* Bullet point list styling */
+.extracurricular-card ul {
+    list-style: disc inside;
+    margin-top: 10px;
+}
+
+/* Forces each bullet to stay on a single line */
+.extracurricular-card li {
+    color: var(--color-text-light);
+    font-size: 0.95em;
+    margin-bottom: 6px;
+    line-height: 1.4;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden; /* Hides text that exceeds the container width */
+    text-overflow: ellipsis; /* Adds "..." if the line is too long for the screen */
+    text-align: left;
+}
+
+/* Header styling inside the card */
+.extracurricular-card h4 {
+    font-size: 1.3em;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+/* Styling for the school/organization name */
+.extracurricular-card .company {
+    font-weight: normal;
+    display: inline;
+}
