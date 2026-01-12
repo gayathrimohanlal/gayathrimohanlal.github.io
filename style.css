@@ -203,13 +203,15 @@ h3 {
     text-align: center;
     border: 2px solid var(--color-accent-teal);
     margin-top: auto;
-    overflow: hidden;
+    overflow: hidden; /* Important: crops the image to the 180px height */
 }
 
 .project-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: block; /* Removes any unwanted bottom whitespace */
+    object-fit: cover; /* Keeps aspect ratio while filling the 180px box */
+    object-position: center; /* Ensures the injector stays centered */
 }
 
 .extracurricular-card {
